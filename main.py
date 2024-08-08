@@ -27,5 +27,12 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/users', methods=['POST', 'GET'])
+def create_users():
+    username = request.form.get('user')
+    print(username)
+    return render_template('users.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
